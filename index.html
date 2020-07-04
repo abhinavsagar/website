@@ -88,88 +88,155 @@
               <p>1. <a href="files/gvae.pdf">Generate High Fidelity Images With Generative
 Variational Autoencoder</a></p>
               
-            
+              <p><b>Cite:</b> Sagar, Abhinav. "Generate High Fidelity Images With Generative Variational Autoencoder."</p>
 
 <img style="width:36%;" alt="profile photo" src="files/pancreas.png" class="hoverZoomLink">
               
-                <p><b>Cite:</b> Sagar, Abhinav. "Generate High Fidelity Images With Generative Variational Autoencoder."</p>
-              
+<p><b>Abstract:</b> In this work, we address the problem of blurred images which are often generated
+using Variational Autoencoders and the problem of mode collapse in Generative
+Adversarial Networks using a single model architecture. We use the encoder of
+VAE as it is while replacing the decoder with a discriminator. The encoder is fed
+data from a normal distribution while the generator is fed that from a gaussian
+distribution. The combination from both is then fed to a discriminator which tells
+whether the generated images are correct or not. We tested the model on 3 different
+datasets increasing in complexity MNIST, fashion MNIST and TCIA Pancreas
+CT dataset. On training the model for 300 iterations, it was able to generate
+much sharper images as compared to those of VAEs. This work is potentially
+very exciting as we are able to combine the advantages of generative models and
+inference models in a bayesian approach. As there is a shortage of medical data,
+this approach could be revolutionary given that we are able to reason from the
+bayesian approach taking into account the uncertainty of generation.</p>
               
               <p>2. <a href="files/plant_cnn.pdf">On Using Transfer Learning For Plant Disease Detection</a></p>
               
-             
+              <p><b>Cite:</b> Sagar, Abhinav, and J. Dheeba. "On Using Transfer Learning For Plant Disease Detection." bioRxiv (2020).</p>
 
               <img style="width:36%;" alt="profile photo" src="files/p1.png" class="hoverZoomLink">
 
- <p><b>Cite:</b> Sagar, Abhinav, and J. Dheeba. "On Using Transfer Learning For Plant Disease Detection." bioRxiv (2020).</p>
+<p><b>Abstract:</b> Deep neural networks have been highly successful in image classification problems.
+In this paper, we show how deep neural networks can be used for plant disease
+recognition in the context of image classification. We have used a publicly available
+Plant Village dataset which has 38 classes of diseases. Hence the problem that
+we have addressed is a multi class classification problem. We have compared five
+different architectures including VGG16, ResNet50, InceptionV3, InceptionResNet
+and DenseNet169 as the backbones for our work. We found that ResNet50 which
+uses skip connections using a residual layer archives the best result on the test set.
+For evaluating the results, we have used metrics like accuracy, precision, recall, F1
+score and class wise confusion metric. Our model achieves the best of results using
+ResNet50 with accuracy of 0.982, precision of 0.94, recall of 0.94 and F1 score of
+0.94.</p>
               
                 <p>3. <a href="files/bnn_sgd.pdf">Bayesian Neural Network via Stochastic Gradient
 Descent</a></p>
               
-             
+              <p><b>Cite:</b> Sagar, Abhinav. "Bayesian Neural Network via Stochastic Gradient Descent." arXiv preprint arXiv:2006.08453 (2020).</p>
 
 <img style="width:36%;" alt="profile photo" src="files/y2.png" class="hoverZoomLink">
-              
-               <p><b>Cite:</b> Sagar, Abhinav. "Bayesian Neural Network via Stochastic Gradient Descent." arXiv preprint arXiv:2006.08453 (2020).</p>
 
-
+<p><b>Abstract:</b> The goal of bayesian approach used in variational inference is to minimize the KL
+divergence between variational distribution and unknown posterior distribution.
+This is done by maximizing the Evidence Lower Bound (ELBO). A neural network
+is used to parametrize these distributions using Stochastic Gradient Descent. This
+work extends the work done by others by deriving the variational inference models.
+We show how SGD can be applied on bayesian neural networks by gradient
+estimation techniques. For validation, we have tested our model on 5 UCI datasets
+and the metrics chosen for evaluation are Root Mean Square Error (RMSE) error
+and negative log likelihood. Our work considerably beats the previous state of the
+art approaches for regression using bayesian neural networks.</p>
               
               <p>4. <a href="files/sem_seg.pdf">Semantic Segmentation With Multi Scale Spatial
 Attention For Self Driving Cars</a></p>
               
-             
+             <p><b>Cite:</b> Sagar, Abhinav. "Semantic Segmentation With Multi Scale Spatial
+Attention For Self Driving Cars."</p>
               
               <img style="width:36%;" alt="profile photo" src="files/di2.png" class="hoverZoomLink">
               
-              
-                <p><b>Cite:</b> Sagar, Abhinav. "Semantic Segmentation With Multi Scale Spatial
-Attention For Self Driving Cars."</p>
-              
+              <p><b>Abstract:</b> In this paper, we present an architecture using multi scale feature fusion at various
+scales for accurate and efficient semantic image segmentation. We have used dilated
+convolutional layers in downsampling layers and transposed convolutional layers
+in the upsampling layers and used concat layers to merge them. We have used skip
+connections in between alternate blocks which are comprised of convolutional and
+max pooling layers. We present an in depth theoretical analysis of our network
+with training and optimization details. We evaluated our network on the Camvid
+dataset using mean accuracy per class and Intersection Over Union (IOU) as the
+evaluation metrics on the test set. Our model outperforms previous state of the art
+on semantic segmentation achieving mean IOU value of 74.12 while running at
+>100 FPS.</p>
 
               <p>5. <a href="files/skin_cnn.pdf">Convolutional Neural Networks for Classifying
 Melanoma Images</a></p>
               
-           
+              <p><b>Cite:</b> Sagar, Abhinav, and J. Dheeba. "Convolutional Neural Networks for Classifying
+Melanoma Images." bioRxiv (2020).</p>
 
 <img style="width:30%;" alt="profile photo" src="files/s2.png" class="hoverZoomLink">
-              
-                <p><b>Cite:</b> Sagar, Abhinav, and J. Dheeba. "Convolutional Neural Networks for Classifying
-Melanoma Images." bioRxiv (2020).</p>
-              
 
+<p><b>Abstract:</b> In this work, we address the problem of skin cancer classification using convolutional neural networks. A lot of cancer cases early on are misdiagnosed as
+something else leading to severe consequences including the death of a patient.
+Also there are cases in which patients have some other problems and doctors think
+they might have skin cancer. This leads to unnecessary time and money spent for
+further diagnosis. In this work, we address both of the above problems using deep
+neural networks and transfer learning architecture. We have used publicly available
+ISIC databases for both training and testing our model. Our work achieves an
+accuracy of 0.935, precision of 0.94, recall of 0.77, F1 score of 0.85 and ROCAUC of 0.861 which is better than the previous state of the art approaches.</p>
               
                   <p>6. <a href="files/object_3d.pdf">Learning to Detect 3D Objects from Point
 Clouds in Real Time</a></p>
               
-           
+              <p><b>Cite:</b> Sagar, Abhinav. "Learning to Detect 3D Objects from Point Clouds in Real Time." arXiv preprint arXiv:2006.01250 (2020).</p>
 
 <img style="width:36%;" alt="profile photo" src="files/o4.png" class="hoverZoomLink">
-              
-                 <p><b>Cite:</b> Sagar, Abhinav. "Learning to Detect 3D Objects from Point Clouds in Real Time." arXiv preprint arXiv:2006.01250 (2020).</p>
 
-
+<p><b>Abstract:</b> In this work, we address the problem of 3D object detection from point cloud
+data in real time. For autonomous vehicles to work, it is very important for the
+perception component to detect the real world objects with both high accuracy and
+fast inference. In this work, we propose a novel neural network architecture along
+with the training and optimization details for detecting 3D objects in point cloud
+data. We compared the results with different backbone architectures including the
+standard ones like VGG, ResNet, Inception with our backbone. Also we present
+the optimization and ablation studies including designing an efficient anchor. We
+have used the Kitti 3D Bird’s Eye View dataset for benchmarking and validating
+our results. Our work surpasses the state of the art in this domain both in terms of
+average precision and speed running at > 30 FPS. This makes it a feasible option to
+be deployed in real time applications including self driving cars.</p>
               
                 <p>7. <a href="files/uq_bnn_s.pdf">Uncertainty Quantification using Variational
 Inference for Biomedical Image Segmentation</a></p>
               
+               <p><b>Cite:</b> Sagar, Abhinav. "Uncertainty Quantification using Variational
+Inference for Biomedical Image Segmentation."</p>
             
 
 <img style="width:32%;" alt="profile photo" src="files/seg.png" class="hoverZoomLink">
-              
-                <p><b>Cite:</b> Sagar, Abhinav. "Uncertainty Quantification using Variational
-Inference for Biomedical Image Segmentation."</p>
 
-
+<p><b>Abstract:</b> Deep learning motivated by convolutional neural networks has been highly successful in a range of medical imaging problems like image classification, image
+segmentation, image synthesis etc. However for validation and interpretability, not
+only do we need the predictions made from the model but also how confident it is
+while making those predictions. This is important in safety critical applications
+for the people to accept it. In this work, we used an encoder decoder architecture
+based on variational inference techniques for segmenting brain tumour images.
+We compared different backbones architectures like U-Net, V-Net and FCN as
+sampling data from the conditional distribution for the encoder. We validated our
+work on BRATS dataset using Dice Similarity Coefficient and Intersection Over
+Union as the evaluation metrics. Our model achieves state of the art results while
+making use of a principled way of uncertainty quantification.</p>
               
                 <p>8. <a href="files/sbnn.pdf">Stochastic Bayesian Neural Networks</a></p>
               
-             
+             <p><b>Cite:</b> Sagar, Abhinav. "Stochastic Bayesian Neural Networks."</p>
               
              <img style="width:36%;" alt="profile photo" src="files/s1.png" class="hoverZoomLink">
-              
-                <p><b>Cite:</b> Sagar, Abhinav. "Stochastic Bayesian Neural Networks."</p>
 
-            
+              <p><b>Abstract:</b> Bayesian neural networks perform variational inference over weights but calculation of the posterior distribution remains a challenge. Our work builds on
+variational inference techniques for bayesian neural networks using the original
+Evidence Lower Bound. In this paper, we present a stochastic bayesian neural
+network in which we maximize Evidence Lower Bound using a new objective
+function which we name as Stochastic Evidence Lower Bound. We tested our
+approach on 5 publicly available UCI datasets using test RMSE and log likelihood
+as the evaluation metrics. We demonstrate that our work not only beats the previous
+state of the art algorithms but also allows uncertainty quantification and is scalable
+to larger datasets.</p>
               
               <h3>Blogs and Articles</h3>
 
@@ -268,6 +335,3 @@ Inference for Biomedical Image Segmentation."</p>
 </body>
 
 </html>
-
-
-
