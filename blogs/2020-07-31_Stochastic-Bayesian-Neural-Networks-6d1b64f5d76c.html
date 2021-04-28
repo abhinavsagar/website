@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Stochastic Bayesian Neural Networks</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Stochastic Bayesian Neural Networks</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Bayesian neural networks through the lens of stochastic process and an alternative lower bound
+</section>
+<section data-field="body" class="e-content">
+<section name="5a46" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="b6d7" id="b6d7" class="graf graf--h3 graf--leading graf--title">Stochastic Bayesian Neural Networks</h3><h4 name="060c" id="060c" class="graf graf--h4 graf-after--h3 graf--subtitle">Bayesian neural networks through the lens of stochastic process and an alternative lower bound</h4></div><div class="section-inner sectionLayout--fullWidth"><figure name="af4e" id="af4e" class="graf graf--figure graf--layoutFillWidth graf-after--h4"><img class="graf-image" data-image-id="1*Sm5RHZoXeXbzYmPPpcW3-w.jpeg" data-width="4288" data-height="2848" data-is-featured="true" src="https://cdn-images-1.medium.com/max/2560/1*Sm5RHZoXeXbzYmPPpcW3-w.jpeg"><figcaption class="imageCaption">Photo by <a href="https://unsplash.com/@urielsc26?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" data-href="https://unsplash.com/@urielsc26?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" class="markup--anchor markup--figure-anchor" rel="noopener" target="_blank">Uriel SC</a> on <a href="https://unsplash.com/s/photos/network?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" data-href="https://unsplash.com/s/photos/network?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" class="markup--anchor markup--figure-anchor" rel="noopener" target="_blank">Unsplash</a></figcaption></figure></div><div class="section-inner sectionLayout--insetColumn"><p name="2ba9" id="2ba9" class="graf graf--p graf-after--figure">Bayesian neural networks have gained huge traction recently as they combine the flexibility, scalability and predictive performance with a probabilistic approach to measure uncertainty.</p><p name="8ae4" id="8ae4" class="graf graf--p graf-after--p">This blog presents the research work done as part of the Bachelors thesis at Vellore Institute of Technology.</p><h3 name="4de4" id="4de4" class="graf graf--h3 graf-after--p">Important Points</h3><ol class="postList"><li name="0de7" id="0de7" class="graf graf--li graf-after--h3">We present a stochastic Bayesian neural network in which we maximize Evidence Lower Bound using a new objective function which we name as Stochastic Evidence Lower Bound.</li><li name="d567" id="d567" class="graf graf--li graf-after--li">We tested our approach on 5 publicly available UCI datasets using test RMSE and log likelihood as the evaluation metrics.</li><li name="724a" id="724a" class="graf graf--li graf-after--li">We demonstrate that our work not only beats the previous state of the art methods but also allows is scalable to larger datasets.</li></ol><h3 name="f25f" id="f25f" class="graf graf--h3 graf-after--li">Variational Inference</h3><p name="12b3" id="12b3" class="graf graf--p graf-after--h3">Bayesian neural networks are defined in terms of priors on weights and the likelihood of the observation. The goal in variational inference techniques is to maximize the ELBO with the goal of fitting an approximate posterior distribution. Bayes theorem is used for finding the posterior, given the prior, evidence and likelihood as defined in Equation 1:</p><figure name="1061" id="1061" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*gpAwAACZHDWqvRcPXDM70w.png" data-width="960" data-height="113" src="https://cdn-images-1.medium.com/max/800/1*gpAwAACZHDWqvRcPXDM70w.png"></figure><p name="3491" id="3491" class="graf graf--p graf-after--figure">However, computation of the posterior distribution is infeasible due to the intractable integral in the likelihood term. This is where variational inference techniques come to rescue by converting the equation to an optimization problem instead between the prior and posterior distributions. For measuring the difference between two probability distributions p and q, KL divergence is defined in Equation 2:</p><figure name="0369" id="0369" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*ahGwUZT5anxhpa6Gfbx8cg.png" data-width="1085" data-height="100" src="https://cdn-images-1.medium.com/max/800/1*ahGwUZT5anxhpa6Gfbx8cg.png"></figure><h3 name="5d53" id="5d53" class="graf graf--h3 graf-after--figure">Stochastic Evidence Lower Bound (SELBO)</h3><p name="ef6c" id="ef6c" class="graf graf--p graf-after--h3">We use a stochastic prior which can be any distribution including the well known Gaussian Process. We consider the neural network with stochastic weights and stochastic bias. A function is sampled from a random noise vector of some function. This sampling helps in uncertainty quantification by maximizing the Stochastic Evidence Lower Bound (SELBO). The difference with the original ELBO is that in our case the distribution over the weights have been replaced by that over functions.</p><h3 name="9d05" id="9d05" class="graf graf--h3 graf-after--p">Proposed Method</h3><p name="25ef" id="25ef" class="graf graf--p graf-after--h3">Our method can be cast as two player zero sum game analogous to a generative adversarial network (GAN). Let the dataset be defined D,variational posterior g(), prior p, weight λ and sampling distribution s for random measurement points. We used a sampling based approach. The network needs to match the prior distribution both near the training data and the test data where predictions are required. This is shown in Equation 5 and Equation 6 where X denotes the M samples independently drawn from c.</p><figure name="43a1" id="43a1" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*WHjBzy22aK5xIa_rm-Ydbw.png" data-width="971" data-height="150" src="https://cdn-images-1.medium.com/max/800/1*WHjBzy22aK5xIa_rm-Ydbw.png"></figure><p name="16af" id="16af" class="graf graf--p graf-after--figure">Next the network is trained using stochastic gradient descent as shown in Equation 7:</p><figure name="94bd" id="94bd" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*pV_UO7XGZYgkyhCriHpCxA.png" data-width="964" data-height="112" src="https://cdn-images-1.medium.com/max/800/1*pV_UO7XGZYgkyhCriHpCxA.png"></figure><p name="150d" id="150d" class="graf graf--p graf-after--figure">Adam optimizer is used for updating the posterior distribution using the prior distribution and the likelihood until the distribution converges. This step is shown in Equation 8:</p><figure name="a0cd" id="a0cd" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*ssXp57rwKjUcpX_A2Ln-tg.png" data-width="989" data-height="77" src="https://cdn-images-1.medium.com/max/800/1*ssXp57rwKjUcpX_A2Ln-tg.png"></figure><p name="9546" id="9546" class="graf graf--p graf-after--figure">Here λ is a regularization parameter which is tuned using bayesian optimization techniques. The optimal value of λ was found to be 0.24.</p><p name="0f34" id="0f34" class="graf graf--p graf-after--p">In every iteration, we sample a mini batch of training data D and random points X from a distribution c. We forward the sample through a network g(φ) which defines the posterior distribution. The goal is to maximize the objective function defined which we name as Stochastic Evidence Lower Bound as shown in Equation 9:</p><figure name="228e" id="228e" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*l02rzQn9rht0_OhRktNo4Q.png" data-width="918" data-height="111" src="https://cdn-images-1.medium.com/max/800/1*l02rzQn9rht0_OhRktNo4Q.png"></figure><p name="9cf1" id="9cf1" class="graf graf--p graf-after--figure">Here λ is a regularization hyperparameter which needs to be tuned carefully to avoid overfitting.</p><h3 name="b8ad" id="b8ad" class="graf graf--h3 graf-after--p">Algorithm</h3><p name="af13" id="af13" class="graf graf--p graf-after--h3">We present the algorithm used in this work as shown below:</p><figure name="a42b" id="a42b" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*7FRwO7LRdI4DqSgcVhwDIQ.png" data-width="1102" data-height="325" src="https://cdn-images-1.medium.com/max/800/1*7FRwO7LRdI4DqSgcVhwDIQ.png"></figure><h3 name="d560" id="d560" class="graf graf--h3 graf-after--figure">Results</h3><p name="40ea" id="40ea" class="graf graf--p graf-after--h3">The results are shown in Table 2 and Table 3 respectively. We used 5 publicly available UCI datasets for regression and used two evaluation metrics — test RMSE and log likelihood for testing.</p><figure name="9a2a" id="9a2a" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*ZiGkcwyJQ4YHKKoCF9RFEg.png" data-width="935" data-height="267" src="https://cdn-images-1.medium.com/max/800/1*ZiGkcwyJQ4YHKKoCF9RFEg.png"></figure><figure name="9c6f" id="9c6f" class="graf graf--figure graf-after--figure"><img class="graf-image" data-image-id="1*ueUhXvTkii53L6zAcnf5QA.png" data-width="883" data-height="259" src="https://cdn-images-1.medium.com/max/800/1*ueUhXvTkii53L6zAcnf5QA.png"></figure><h3 name="3d18" id="3d18" class="graf graf--h3 graf-after--figure">Conclusions</h3><p name="b64b" id="b64b" class="graf graf--p graf-after--h3">We investigated a new technique for training bayesian neural networks using stochastic processes. We proposed a new lower bound using variational inference techniques which we named as Stochastic Evidence Lower Bound. We trained the neural network using gradient descent algorithms by sampling a mini batch of data in every iteration. Using test RMSE and log likelihood as the evaluation metrics, our work outperforms previous state of the art on 5 publicly available UCI datasets on regression benchmarks. This approach not only allows estimating uncertainties but is also scalable to larger datasets.</p><h3 name="4da9" id="4da9" class="graf graf--h3 graf-after--p">References</h3><p name="83bc" id="83bc" class="graf graf--p graf-after--h3">C. Blundell, J. Cornebise, K. Kavukcuoglu, and D. Wierstra. Weight uncertainty in neural networks. arXiv preprint arXiv:1505.05424, 2015.</p><p name="0c69" id="0c69" class="graf graf--p graf-after--p">Y. Gal and Z. Ghahramani. Dropout as a bayesian approximation: Representing model uncertainty in deep learning. In international conference on machine learning, pages 1050–1059, 2016.</p><p name="549b" id="549b" class="graf graf--p graf-after--p">Y. Gal, R. Islam, and Z. Ghahramani. Deep bayesian active learning with image data. arXiv preprint arXiv:1703.02910, 2017.</p><p name="f9a5" id="f9a5" class="graf graf--p graf-after--p">S. Ghosh, J. Yao, and F. Doshi-Velez. Structured variational learning of bayesian neural networks with horseshoe priors. arXiv preprint arXiv:1806.05975, 2018.</p><p name="a963" id="a963" class="graf graf--p graf-after--p">S. Sun, G. Zhang, J. Shi, and R. Grosse. Functional variational bayesian neural networks. arXiv preprint arXiv:1903.05779, 2019.</p><p name="70d1" id="70d1" class="graf graf--p graf-after--p">J. Mukhoti, P. Stenetorp, and Y. Gal. On the importance of strong baselines in bayesian deep learning. arXiv preprint arXiv:1811.09385, 2018.</p><h3 name="8404" id="8404" class="graf graf--h3 graf-after--p">Before You Go</h3><p name="2014" id="2014" class="graf graf--p graf-after--h3">Research Paper: <a href="https://arxiv.org/pdf/2008.07587" data-href="https://arxiv.org/pdf/2008.07587" class="markup--anchor markup--p-anchor" rel="nofollow noopener" target="_blank">https://arxiv.org/pdf/2008.07587</a></p><p name="91a9" id="91a9" class="graf graf--p graf-after--p graf--trailing">Code: <a href="https://github.com/abhinavsagar/sbnn" data-href="https://github.com/abhinavsagar/sbnn" class="markup--anchor markup--p-anchor" rel="nofollow noopener" target="_blank">https://github.com/abhinavsagar/sbnn</a></p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@abhinav.sagar" class="p-author h-card">Abhinav Sagar</a> on <a href="https://medium.com/p/6d1b64f5d76c"><time class="dt-published" datetime="2020-07-31T17:34:12.887Z">July 31, 2020</time></a>.</p><p><a href="https://medium.com/@abhinav.sagar/stochastic-bayesian-neural-networks-6d1b64f5d76c" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on April 28, 2021.</p></footer></article></body></html>

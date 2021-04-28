@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Plant Disease Detection Using Transfer Learning</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Plant Disease Detection Using Transfer Learning</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+And boost the productivity of the farm
+</section>
+<section data-field="body" class="e-content">
+<section name="603f" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="5d39" id="5d39" class="graf graf--h3 graf--leading graf--title">Plant Disease Detection Using Transfer Learning</h3><h4 name="dfe9" id="dfe9" class="graf graf--h4 graf-after--h3 graf--subtitle">And boost the productivity of the farm</h4></div><div class="section-inner sectionLayout--fullWidth"><figure name="acb4" id="acb4" class="graf graf--figure graf--layoutFillWidth graf-after--h4"><img class="graf-image" data-image-id="1*PEWCvZ1iT6muTECNz7PXhQ.jpeg" data-width="5760" data-height="3646" data-is-featured="true" src="https://cdn-images-1.medium.com/max/2560/1*PEWCvZ1iT6muTECNz7PXhQ.jpeg"></figure></div><div class="section-inner sectionLayout--insetColumn"><p name="ce21" id="ce21" class="graf graf--p graf-after--figure">In this blog, we show how neural networks can be used for plant disease recognition in the context of image classification. We used publicly available Plant Village dataset which has 38 classes of diseases. We compared five different backbones including VGG16, ResNet50, InceptionV3, InceptionResNet and DenseNet169. We found that ResNet50 achieves the best result on the test set. For evaluation, we used metrics: accuracy, precision, recall, F1 score and class wise confusion metric. Our model achieves the best of results using ResNet50 with accuracy of 0.982, precision of 0.94, recall of 0.94 and F1 score of 0.94.</p><h3 name="4565" id="4565" class="graf graf--h3 graf-after--p">Introduction</h3><p name="2305" id="2305" class="graf graf--p graf-after--h3">Disease detection in plants plays an important role in agriculture as farmers have often to decide whether the crop they are harvesting is good enough. It is of utmost importance to take this seriously as it can lead to serious problems in plants due to which product quality, quantity or productivity is affected. Plant diseases cause a periodic outbreak of diseases leading to large-scale death which severely affects the economy. Here computer vision algorithms can be used to provide image-based automatic inspection. Manual identification is labor intensive, less accurate and can be done only in small areas at a time. By this method, the plant diseases can be identified at the initial stage itself and the pest and infection control tools can be used to solve pest problems while minimizing risks to people and the environment.</p><h3 name="2749" id="2749" class="graf graf--h3 graf-after--p">Dataset</h3><p name="5bf3" id="5bf3" class="graf graf--p graf-after--h3">A public dataset is provided which contains 54,305 images of diseased and healthy plant leaves collected under controlled conditions. The images cover 14 species of crops, including: apple, 2 blueberry, cherry, grape, orange, peach, pepper, potato, raspberry, soy, squash, strawberry and tomato. It contains images of 17 basic diseases, 4 bacterial diseases, 2 diseases caused by mold, 2 viral diseases and 1 disease caused by a mite. Each class label is a crop-disease pair, and we make an attempt to predict the crop-disease pair given just the image of the plant leaf. Figure 1 shows all the classes present in the PlantVillage dataset.</p><figure name="bf37" id="bf37" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*hvyNBO64AfROfiRb2-VOnA.png" data-width="817" data-height="445" src="https://cdn-images-1.medium.com/max/800/1*hvyNBO64AfROfiRb2-VOnA.png"><figcaption class="imageCaption">Figure 1: All the classes of plant disease present in dataset</figcaption></figure><h3 name="30c1" id="30c1" class="graf graf--h3 graf-after--figure">Transfer Learning</h3><p name="4d5d" id="4d5d" class="graf graf--p graf-after--h3">Transfer learning has been highly successful for classification problems. The main advantage in using transfer learning is that instead of starting the learning process from scratch, the model starts from patterns that have been learned when solving a different problem which is similar in nature to the one being solved. This way the model leverages previous learning and avoids starting from scratch. In image classification, transfer learning is usually expressed through the use of pre-trained models. A pre-trained model is a model that was trained on a large benchmark dataset to solve a similar problem to the one that we want to solve.</p><h3 name="bb8e" id="bb8e" class="graf graf--h3 graf-after--p">Data Augmentation</h3><p name="0f59" id="0f59" class="graf graf--p graf-after--h3">The images are resized to 256×256 pixels. I used data augmentation techniques like shearing, zooming, flipping and brightness change to increase the dataset size to more than double the original dataset size. The image rotation degree was set to be randomly generated from 0 to 45. The number of normal samples in the dataset was increased from 1,583 to 4,266 by performing the image augmentation techniques. In this manner, the number of samples for each class was equalized. This equal distribution makes it possible to use all of the data instead of selecting random data during the training process. It is expected that this situation increases the accuracy of the training and positively affects the classification results. Image augmentation techniques used in this work are shown in Fig 2.</p><figure name="a486" id="a486" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*iYvSlqJyMsILQSRRzDO8pA.png" data-width="589" data-height="310" src="https://cdn-images-1.medium.com/max/800/1*iYvSlqJyMsILQSRRzDO8pA.png"><figcaption class="imageCaption">Figure 2: Data augmentation</figcaption></figure><h3 name="0852" id="0852" class="graf graf--h3 graf-after--figure">Visualization of Feature Maps</h3><p name="bac7" id="bac7" class="graf graf--p graf-after--h3">The feature maps help in explaining what the model is learning at every layer. As the depth increases, the model is able to learn more spatial information. The functionality and expected behaviour of the neural networks can be explained especially to non-technical stakeholders who wouldn’t accept deep learning algorithms results until there is a reasoning behind them. This also makes extending and improving the overall design of models since we’d have knowledge of the current design, including how it performs. For example, if we see a lot of zeros then we’ll know we have many dead filters that aren’t going much for our network, a great opportunity to do some pruning for model compression. Fig 3. shows the activation maps for the filters present in the first three convolution and the first three max pooling layers:</p><figure name="8021" id="8021" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*O4fICBr07ny8JQUHJm7lzQ.png" data-width="810" data-height="749" src="https://cdn-images-1.medium.com/max/800/1*O4fICBr07ny8JQUHJm7lzQ.png"><figcaption class="imageCaption">Figure 3: Visualization of feature maps a) First convolutional layer b) First pooling layer c) Second convolutional layer d) Second pooling layer e) Third convolutional layer f) Third pooling layer</figcaption></figure><h3 name="075d" id="075d" class="graf graf--h3 graf-after--figure">Network Architecture</h3><p name="9cca" id="9cca" class="graf graf--p graf-after--h3">The network architecture can be explained in the following points:</p><ol class="postList"><li name="abfe" id="abfe" class="graf graf--li graf-after--p">We split the data-set into three sets — train, validation and test sets.</li><li name="0511" id="0511" class="graf graf--li graf-after--li">We tried with pre trained models like Inception v3, InceptionResNet v2 and ResNet 50, MobileNet and Densenet169. The last layer is used for the classification with softmax as the activation function.</li><li name="da66" id="da66" class="graf graf--li graf-after--li">The loss function used is binary cross-entropy and trained the model for 30 epochs. Multi class log loss is chosen as the evaluation metric. Activation function used was Relu throughout except for the last layer where it was Sigmoid as this is a binary classification problem.</li><li name="26bb" id="26bb" class="graf graf--li graf-after--li">We used 30 percent dropouts to reduce overfitting in between the layers and batch normalization to reduce internal covariate shift.</li></ol><h3 name="f3b4" id="f3b4" class="graf graf--h3 graf-after--li">Evaluation Metrics</h3><p name="6788" id="6788" class="graf graf--p graf-after--h3">For evaluation, Multi Class Log Loss metric was chosen which is defined in Equation 1:</p><figure name="9371" id="9371" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*a0gjBXQfuO474aGM7A_dIA.png" data-width="1103" data-height="345" src="https://cdn-images-1.medium.com/max/800/1*a0gjBXQfuO474aGM7A_dIA.png"></figure><h3 name="ff51" id="ff51" class="graf graf--h3 graf-after--figure">Expirimental Results</h3><p name="bce4" id="bce4" class="graf graf--p graf-after--h3">The loss vs epochs, accuracy vs epochs figure is shown in Fig 4.</p><figure name="fac3" id="fac3" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*qjM3TbHGjddyj8e6L7vFZA.png" data-width="924" data-height="349" src="https://cdn-images-1.medium.com/max/800/1*qjM3TbHGjddyj8e6L7vFZA.png"><figcaption class="imageCaption">Figure 4: a) Loss vs epochs b) Accuracy vs epochs</figcaption></figure><h3 name="374a" id="374a" class="graf graf--h3 graf-after--figure">Confusion Matrix</h3><p name="529c" id="529c" class="graf graf--p graf-after--h3">Confusion Matrix is often used as an evaluation metric when analyzing misclassification between classes. Each row of the matrix represents the examples in the class being predicted while each column represents the examples in the class which are original. The diagonals show the classes which have been classified correctly. The class wise confusion matrix is shown in Fig 5. Each of these contain a pair both having the disease and not having one.</p><figure name="bd57" id="bd57" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*0UA9Wm13dPwN-3Z0QARKHw.png" data-width="626" data-height="808" src="https://cdn-images-1.medium.com/max/800/1*0UA9Wm13dPwN-3Z0QARKHw.png"><figcaption class="imageCaption">Figure 5: Confusion Matrix for all the classes</figcaption></figure><p name="d898" id="d898" class="graf graf--p graf-after--figure">Comparison of accuracy, precision, recall and F1 score for all the transfer learning architectures used is shown in Table 1:</p><figure name="e50a" id="e50a" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*Tm7GNvi0vPvkuUJdXN9pUQ.png" data-width="1156" data-height="269" src="https://cdn-images-1.medium.com/max/800/1*Tm7GNvi0vPvkuUJdXN9pUQ.png"><figcaption class="imageCaption">\</figcaption></figure><h3 name="fcb2" id="fcb2" class="graf graf--h3 graf-after--figure">Conclusions</h3><p name="4892" id="4892" class="graf graf--p graf-after--h3">Plant diseases are a major threat to food supply worldwide. This blog demonstrates how neural networks can be used to automate disease diagnosis through image classification. Using a public dataset of 54,306 images of diseased and healthy plant leaves, a deep convolutional neural network is trained to classify crop species and disease status of 38 different classes containing 14 crop species and 26 diseases. ResNet50 achieves the highest accuracy as well as precision, recall and F1 score.</p><h3 name="024a" id="024a" class="graf graf--h3 graf-after--p">Before You Go</h3><p name="b894" id="b894" class="graf graf--p graf-after--h3 graf--trailing">The corresponding link to <a href="https://abhinavsagar.github.io/files/plant_cnn.pdf" data-href="https://abhinavsagar.github.io/files/plant_cnn.pdf" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Paper</a> and <a href="https://github.com/abhinavsagar/plant-disease" data-href="https://github.com/abhinavsagar/plant-disease" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Code</a>.</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@abhinav.sagar" class="p-author h-card">Abhinav Sagar</a> on <a href="https://medium.com/p/e6995642a71e"><time class="dt-published" datetime="2020-07-25T19:30:21.655Z">July 25, 2020</time></a>.</p><p><a href="https://medium.com/@abhinav.sagar/plant-disease-detection-using-transfer-learning-e6995642a71e" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on April 28, 2021.</p></footer></article></body></html>
